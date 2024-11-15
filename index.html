@@ -57,7 +57,7 @@
                 <!-- Rectangle -->
                 <div
                     class="card card-compact bg-base-100 shadow-xl p-2 hover:bg-cyan-400 transition delay-100 duration-700 ease-in-out">
-                    <figure class="p-12">
+                    <figure class="p-12 relative">
                         <img src="/images//rectangle.png" class="h-48" alt="Rectangle image" />
                         <div class="absolute mt-12 text-center" id="rectangle-w-l-area-display-container" hidden>
                             <div>
@@ -74,11 +74,13 @@
                         <p class="text-center">Area (A) = w x l</p>
                         <div class="flex mt-5">
                             <div class="flex-1">
-                                <input id="rectangle-width-input" type="number" placeholder="w" class="p-1 w-24 bg-[#F1F1F1]">
+                                <input id="rectangle-width-input" type="number" placeholder="w"
+                                    class="p-1 w-24 bg-[#F1F1F1]">
                                 <span>cm</span>
                             </div>
                             <div class="flex-1">
-                                <input id="rectangle-length-input" type="number" placeholder="l" class="p-1 w-24 bg-[#F1F1F1]">
+                                <input id="rectangle-length-input" type="number" placeholder="l"
+                                    class="p-1 w-24 bg-[#F1F1F1]">
                                 <span>cm</span>
                             </div>
                         </div>
@@ -88,47 +90,73 @@
                     </div>
                 </div>
                 <!-- Parallelogram -->
-                <div class="card card-compact bg-base-100 shadow-xl p-2">
+                <div
+                    class="card card-compact bg-base-100 shadow-xl p-2  hover:bg-red-400 transition delay-100 duration-700 ease-in-out">
                     <figure class="p-12">
                         <img src="/images//parallelogram.png" class="h-48" alt="Parallelogram image" />
+                        <div class="absolute mt-12 text-center" id="parallelogram-b-h-area-display-container" hidden>
+                            <div>
+                                <samp>b = </samp><span id="parallelogram-base"></span> <span>cm</span> <br>
+                                <samp>h = </samp><span id="parallelogram-height"></span> <span>cm</span>
+                            </div>
+                            <div class="mt-2">
+                                <span>Area = </span><span id="parallelogram-area"></span><span> cm<sup>2</sup></span>
+                            </div>
+                        </div>
                     </figure>
                     <div class="card-body">
                         <h2 class="text-2xl font-bold text-center">Parallelogram</h2>
-                        <p class="text-center">Area (A) = w x l</p>
+                        <p class="text-center">Area (A) = b x h</p>
                         <div class="flex mt-5">
                             <div class="flex-1">
-                                <input type="number" placeholder="w" class="p-1 w-24 bg-[#F1F1F1]">
+                                <input id="parallelogram-base-input" type="number" placeholder="b"
+                                    class="p-1 w-24 bg-[#F1F1F1]">
                                 <span>cm</span>
                             </div>
                             <div class="flex-1">
-                                <input type="number" placeholder="l" class="p-1 w-24 bg-[#F1F1F1]">
+                                <input id="parallelogram-height-input" type="number" placeholder="h"
+                                    class="p-1 w-24 bg-[#F1F1F1]">
                                 <span>cm</span>
                             </div>
                         </div>
                         <div class="card-actions justify-center mt-10">
-                            <button class="btn btn-primary w-full">Calculate</button>
+                            <button onclick="calculateParallelogramArea()"
+                                class="btn btn-primary w-full">Calculate</button>
                         </div>
                     </div>
                 </div>
-                <div class="card card-compact bg-base-100 shadow-xl p-2">
-                    <figure class="p-12">
-                        <img src="/images//triangle.png" class="h-48" alt="Triangle image" />
+                <!-- Rhombus -->
+                <div
+                    class="card card-compact bg-base-100 shadow-xl p-2  hover:bg-teal-400 transition delay-100 duration-700 ease-in-out">
+                    <figure class="p-12 relative">
+                        <img src="/images//rhombus.png" class="h-48" alt="Rhombus image" />
+                        <div class="absolute mt-12 text-center" id="rhombus-d1-d2-area-display-container" hidden>
+                            <div>
+                                <samp>d<sub>1</sub> = </samp><span id="rhombus-d1"></span> <span>cm</span> <br>
+                                <samp>d<sub>2</sub> = </samp><span id="rhombus-d2"></span> <span>cm</span>
+                            </div>
+                            <div class="mt-2">
+                                <span>Area = </span><span id="rhombus-area"></span><span> cm<sup>2</sup></span>
+                            </div>
+                        </div>
                     </figure>
                     <div class="card-body">
-                        <h2 class="text-2xl font-bold text-center">Triangle</h2>
-                        <p class="text-center">Area (A) = 0.5 x b x h</p>
+                        <h2 class="text-2xl font-bold text-center">Rhombus</h2>
+                        <p class="text-center">Area (A) = 0.5 x d<sub>1</sub> x d<sub>2</sub> </p>
                         <div class="flex mt-5">
                             <div class="flex-1">
-                                <input type="number" placeholder="b" class="p-1 w-24 bg-[#F1F1F1]">
+                                <input id="rhombus-d1-input" type="number" placeholder="d1"
+                                    class="p-1 w-24 bg-[#F1F1F1]">
                                 <span>cm</span>
                             </div>
                             <div class="flex-1">
-                                <input type="number" placeholder="h" class="p-1 w-24 bg-[#F1F1F1]">
+                                <input id="rhombus-d2-input" type="number" placeholder="d2"
+                                    class="p-1 w-24 bg-[#F1F1F1]">
                                 <span>cm</span>
                             </div>
                         </div>
                         <div class="card-actions justify-center mt-10">
-                            <button class="btn btn-primary w-full">Calculate</button>
+                            <button onclick="rhombusArea()" class="btn btn-primary w-full">Calculate</button>
                         </div>
                     </div>
                 </div>
