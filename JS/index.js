@@ -63,35 +63,35 @@
 //     }
 // }
 // calculate Parallelogram Area
-function calculateParallelogramArea() {
-    // input base
-    const parallelogramBaseInput = document.getElementById('parallelogram-base-input');
-    const parallelogramBaseNumber = parallelogramBaseInput.value;
-    const pBase = parseFloat(parallelogramBaseNumber);
-    parallelogramBaseInput.value = '';
-    // input height
-    const parallelogramHeightInput = document.getElementById('parallelogram-height-input');
-    const parallelogramHeightNumber = parallelogramHeightInput.value;
-    pHeight = parseFloat(parallelogramHeightNumber);
-    parallelogramHeightInput.value = '';
-    //Parallelogram area calculation
-    const parallelogram_area = pBase * pHeight;
-    // Display input base, Height and area after clicking on calculate button
-    const parallelogramBase = document.getElementById('parallelogram-base');
-    parallelogramBase.innerText = pBase;
-    const parallelogramHeight = document.getElementById('parallelogram-height');
-    parallelogramHeight.innerText = pHeight;
-    const parallelogramArea = document.getElementById('parallelogram-area');
-    parallelogramArea.innerText = parallelogram_area.toFixed(2);
+// function calculateParallelogramArea() {
+//     // input base
+//     const parallelogramBaseInput = document.getElementById('parallelogram-base-input');
+//     const parallelogramBaseNumber = parallelogramBaseInput.value;
+//     const pBase = parseFloat(parallelogramBaseNumber);
+//     parallelogramBaseInput.value = '';
+//     // input height
+//     const parallelogramHeightInput = document.getElementById('parallelogram-height-input');
+//     const parallelogramHeightNumber = parallelogramHeightInput.value;
+//     pHeight = parseFloat(parallelogramHeightNumber);
+//     parallelogramHeightInput.value = '';
+//     //Parallelogram area calculation
+//     const parallelogram_area = pBase * pHeight;
+//     // Display input base, Height and area after clicking on calculate button
+//     const parallelogramBase = document.getElementById('parallelogram-base');
+//     parallelogramBase.innerText = pBase;
+//     const parallelogramHeight = document.getElementById('parallelogram-height');
+//     parallelogramHeight.innerText = pHeight;
+//     const parallelogramArea = document.getElementById('parallelogram-area');
+//     parallelogramArea.innerText = parallelogram_area.toFixed(2);
 
-    const displayParallelogramBaseHeightArea = document.getElementById('parallelogram-b-h-area-display-container');
-    if (parallelogramArea !== null) {
-        displayParallelogramBaseHeightArea.removeAttribute('hidden');
-    }
-    else {
-        displayParallelogramBaseHeightArea.setAttribute('hidden', true);
-    }
-}
+//     const displayParallelogramBaseHeightArea = document.getElementById('parallelogram-b-h-area-display-container');
+//     if (parallelogramArea !== null) {
+//         displayParallelogramBaseHeightArea.removeAttribute('hidden');
+//     }
+//     else {
+//         displayParallelogramBaseHeightArea.setAttribute('hidden', true);
+//     }
+// }
 
 // Calculate Rhombus area
 function rhombusArea() {
@@ -208,7 +208,19 @@ function calculateRectangleArea() {
     const area = (width * length).toFixed(2);
     displayResultInCard(width, length, area, displayContainer, dWidth, dLength, dArea);
 }
+// Parallelogram area
 
+function calculateParallelogramArea() {
+    const base = getInputValueById('parallelogram-base-input');
+    const height = getInputValueById('parallelogram-height-input');
+    const displayContainer = document.getElementById('parallelogram-b-h-area-display-container');
+    const dBase = document.getElementById('parallelogram-base');
+    const dHeight = document.getElementById('parallelogram-height');
+    const dArea = document.getElementById('parallelogram-area');
+
+    const area = base * height;
+    displayResultInCard(base, height, area, displayContainer, dBase, dHeight, dArea);
+}
 function getInputValueById(inputFieldId) {
     const inputField = document.getElementById(inputFieldId);
     const inputValueText = inputField.value;
