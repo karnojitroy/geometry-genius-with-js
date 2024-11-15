@@ -119,3 +119,62 @@ function rhombusArea() {
     }
 
 }
+// calculate Pentagon area
+function calculatePentagonArea() {
+    // input perimeter
+    const perimeterInput = document.getElementById('perimeter-input');
+    const perimeterNumber = perimeterInput.value;
+    const p = parseFloat(perimeterNumber);
+    perimeterInput.value = '';
+    // input apothem
+    const apothemInput = document.getElementById('apothem-input');
+    const apothemNumber = apothemInput.value;
+    const a = parseFloat(apothemNumber);
+    apothemInput.value = '';
+    // pentagon area calculation
+    const pentagon_area = 0.5 * p * a;
+    // Display pentagon perimeter. apothem, area after clicking calculate button 
+    const perimeter = document.getElementById('pentagon-p');
+    perimeter.innerText = p;
+    const apothem = document.getElementById('pentagon-a');
+    apothem.innerText = a;
+    const pentagonArea = document.getElementById('pentagon-area');
+    pentagonArea.innerText = pentagon_area.toFixed(2);
+
+    const displayPentagonPerimeterApothemArea = document.getElementById('pentagon-p-a-area-display-container');
+    if (pentagonArea !== null) {
+        displayPentagonPerimeterApothemArea.removeAttribute('hidden');
+    }
+    else {
+        displayPentagonPerimeterApothemArea.setAttribute('hidden', true);
+    }
+}
+
+// Calculate Ellipse area
+function calculateEllipseArea() {
+    // input a axis length
+    const aAxisInput = document.getElementById('a-axis-input');
+    const aAxisNumber = aAxisInput.value;
+    const a = parseFloat(aAxisNumber);
+    // input b axis length
+    const bAxisInput = document.getElementById('b-axis-input');
+    const bAxisNumber = bAxisInput.value;
+    const b = parseFloat(bAxisNumber);
+    // area calculation
+    const ellipse_area = 3.14 * a * b;
+    // Display Ellipse a and b axis length and area after clicking calculate button 
+    const aAxis = document.getElementById('a-axis');
+    aAxis.innerText = a;
+    const bAxis = document.getElementById('b-axis');
+    bAxis.innerText = b;
+    const ellipseArea = document.getElementById('ellipse-area');
+    ellipseArea.innerText = ellipse_area.toFixed(2);
+
+    const displayEllipseAreaContainer = document.getElementById('ellipse-a-b-area-display-container');
+    if (ellipseArea !== null) {
+        displayEllipseAreaContainer.removeAttribute('hidden');
+    }
+    else {
+        displayEllipseAreaContainer.setAttribute('hidden', true);
+    }
+}
