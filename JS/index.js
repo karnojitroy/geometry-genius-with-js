@@ -217,11 +217,11 @@ function calculateParallelogramArea() {
     const dHeight = document.getElementById('parallelogram-height');
     const dArea = document.getElementById('parallelogram-area');
 
-    const area = base * height;
+    const area = (base * height).toFixed(2);
     displayResultInCard(base, height, area, displayContainer, dBase, dHeight, dArea);
 }
 // Rhombus are
-function calculateRhombusArea(){
+function calculateRhombusArea() {
     const d1 = getInputValueById('rhombus-d1-input');
     const d2 = getInputValueById('rhombus-d2-input');
     const displayContainer = document.getElementById('rhombus-d1-d2-area-display-container');
@@ -229,20 +229,32 @@ function calculateRhombusArea(){
     const dD2 = document.getElementById('rhombus-d2');
     const dArea = document.getElementById('rhombus-area');
 
-    const area = 0.5 * d1 * d2;
-    displayResultInCard(d1, d2, area, displayContainer, dD1,dD2, dArea);
+    const area = (0.5 * d1 * d2).toFixed(2);
+    displayResultInCard(d1, d2, area, displayContainer, dD1, dD2, dArea);
 }
 // Pentagon area
-function calculatePentagonArea(){
-const perimeter = getInputValueById('perimeter-input');
-const apothem = getInputValueById('apothem-input');
-const displayContainer = document.getElementById('pentagon-p-a-area-display-container');
-const dPerimeter = document.getElementById('pentagon-p');
-const dApothem = document.getElementById('pentagon-a');
-const dArea = document.getElementById('pentagon-area');
+function calculatePentagonArea() {
+    const perimeter = getInputValueById('perimeter-input');
+    const apothem = getInputValueById('apothem-input');
+    const displayContainer = document.getElementById('pentagon-p-a-area-display-container');
+    const dPerimeter = document.getElementById('pentagon-p');
+    const dApothem = document.getElementById('pentagon-a');
+    const dArea = document.getElementById('pentagon-area');
 
-const area = 0.5 * perimeter * apothem;
-displayResultInCard(perimeter, apothem, area, displayContainer, dPerimeter, dApothem, dArea);
+    const area = (0.5 * perimeter * apothem).toFixed(2);
+    displayResultInCard(perimeter, apothem, area, displayContainer, dPerimeter, dApothem, dArea);
+}
+// Ellipse area
+function calculateEllipseArea() {
+    const a = getInputValueById('a-axis-input');
+    const b = getInputValueById('b-axis-input');
+    const displayContainer = document.getElementById('ellipse-a-b-area-display-container');
+    const dA = document.getElementById('a-axis');
+    const dB = document.getElementById('b-axis');
+    const dArea = document.getElementById('ellipse-area');
+
+    const area = (3.14 * a * b).toFixed(2);
+    displayResultInCard(a, b, area, displayContainer, dA, dB, dArea);
 }
 
 function getInputValueById(inputFieldId) {
