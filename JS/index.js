@@ -94,35 +94,35 @@
 // }
 
 // Calculate Rhombus area
-function rhombusArea() {
-    // input d1
-    const rhombusD1Input = document.getElementById('rhombus-d1-input');
-    const rhombusD1Number = rhombusD1Input.value;
-    const d1 = parseFloat(rhombusD1Number);
-    rhombusD1Input.value = '';
-    // input d2
-    const rhombusD2Input = document.getElementById('rhombus-d2-input');
-    const rhombusD2Number = rhombusD2Input.value;
-    const d2 = parseFloat(rhombusD2Number);
-    rhombusD2Input.value = '';
-    // area calculation
-    const rhombus_area = 0.5 * d1 * d2;
-    // Display  d1, 2 and area after clicking on calculate button
-    const rhombusD1 = document.getElementById('rhombus-d1');
-    rhombusD1.innerText = d1;
-    const rhombusD2 = document.getElementById('rhombus-d2');
-    rhombusD2.innerText = d2;
-    const rhombusArea = document.getElementById('rhombus-area');
-    rhombusArea.innerText = rhombus_area.toFixed(2);
-    const rhombusD1D2AreaContainer = document.getElementById('rhombus-d1-d2-area-display-container');
-    if (rhombusArea !== null) {
-        rhombusD1D2AreaContainer.removeAttribute('hidden');
-    }
-    else {
-        rhombusD1D2AreaContainer.setAttribute('hidden', true);
-    }
+// function rhombusArea() {
+//     // input d1
+//     const rhombusD1Input = document.getElementById('rhombus-d1-input');
+//     const rhombusD1Number = rhombusD1Input.value;
+//     const d1 = parseFloat(rhombusD1Number);
+//     rhombusD1Input.value = '';
+//     // input d2
+//     const rhombusD2Input = document.getElementById('rhombus-d2-input');
+//     const rhombusD2Number = rhombusD2Input.value;
+//     const d2 = parseFloat(rhombusD2Number);
+//     rhombusD2Input.value = '';
+//     // area calculation
+//     const rhombus_area = 0.5 * d1 * d2;
+//     // Display  d1, 2 and area after clicking on calculate button
+//     const rhombusD1 = document.getElementById('rhombus-d1');
+//     rhombusD1.innerText = d1;
+//     const rhombusD2 = document.getElementById('rhombus-d2');
+//     rhombusD2.innerText = d2;
+//     const rhombusArea = document.getElementById('rhombus-area');
+//     rhombusArea.innerText = rhombus_area.toFixed(2);
+//     const rhombusD1D2AreaContainer = document.getElementById('rhombus-d1-d2-area-display-container');
+//     if (rhombusArea !== null) {
+//         rhombusD1D2AreaContainer.removeAttribute('hidden');
+//     }
+//     else {
+//         rhombusD1D2AreaContainer.setAttribute('hidden', true);
+//     }
 
-}
+// }
 // calculate Pentagon area
 function calculatePentagonArea() {
     // input perimeter
@@ -209,7 +209,6 @@ function calculateRectangleArea() {
     displayResultInCard(width, length, area, displayContainer, dWidth, dLength, dArea);
 }
 // Parallelogram area
-
 function calculateParallelogramArea() {
     const base = getInputValueById('parallelogram-base-input');
     const height = getInputValueById('parallelogram-height-input');
@@ -220,6 +219,18 @@ function calculateParallelogramArea() {
 
     const area = base * height;
     displayResultInCard(base, height, area, displayContainer, dBase, dHeight, dArea);
+}
+// Rhombus are
+function calculateRhombusArea(){
+    const d1 = getInputValueById('rhombus-d1-input');
+    const d2 = getInputValueById('rhombus-d2-input');
+    const displayContainer = document.getElementById('rhombus-d1-d2-area-display-container');
+    const dD1 = document.getElementById('rhombus-d1');
+    const dD2 = document.getElementById('rhombus-d2');
+    const dArea = document.getElementById('rhombus-area');
+
+    const area = 0.5 * d1 * d2;
+    displayResultInCard(d1, d2, area, displayContainer, dD1,dD2, dArea);
 }
 function getInputValueById(inputFieldId) {
     const inputField = document.getElementById(inputFieldId);
