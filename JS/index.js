@@ -124,35 +124,35 @@
 
 // }
 // calculate Pentagon area
-function calculatePentagonArea() {
-    // input perimeter
-    const perimeterInput = document.getElementById('perimeter-input');
-    const perimeterNumber = perimeterInput.value;
-    const p = parseFloat(perimeterNumber);
-    perimeterInput.value = '';
-    // input apothem
-    const apothemInput = document.getElementById('apothem-input');
-    const apothemNumber = apothemInput.value;
-    const a = parseFloat(apothemNumber);
-    apothemInput.value = '';
-    // pentagon area calculation
-    const pentagon_area = 0.5 * p * a;
-    // Display pentagon perimeter. apothem, area after clicking calculate button 
-    const perimeter = document.getElementById('pentagon-p');
-    perimeter.innerText = p;
-    const apothem = document.getElementById('pentagon-a');
-    apothem.innerText = a;
-    const pentagonArea = document.getElementById('pentagon-area');
-    pentagonArea.innerText = pentagon_area.toFixed(2);
+// function calculatePentagonArea() {
+//     // input perimeter
+//     const perimeterInput = document.getElementById('perimeter-input');
+//     const perimeterNumber = perimeterInput.value;
+//     const p = parseFloat(perimeterNumber);
+//     perimeterInput.value = '';
+//     // input apothem
+//     const apothemInput = document.getElementById('apothem-input');
+//     const apothemNumber = apothemInput.value;
+//     const a = parseFloat(apothemNumber);
+//     apothemInput.value = '';
+//     // pentagon area calculation
+//     const pentagon_area = 0.5 * p * a;
+//     // Display pentagon perimeter. apothem, area after clicking calculate button 
+//     const perimeter = document.getElementById('pentagon-p');
+//     perimeter.innerText = p;
+//     const apothem = document.getElementById('pentagon-a');
+//     apothem.innerText = a;
+//     const pentagonArea = document.getElementById('pentagon-area');
+//     pentagonArea.innerText = pentagon_area.toFixed(2);
 
-    const displayPentagonPerimeterApothemArea = document.getElementById('pentagon-p-a-area-display-container');
-    if (pentagonArea !== null) {
-        displayPentagonPerimeterApothemArea.removeAttribute('hidden');
-    }
-    else {
-        displayPentagonPerimeterApothemArea.setAttribute('hidden', true);
-    }
-}
+//     const displayPentagonPerimeterApothemArea = document.getElementById('pentagon-p-a-area-display-container');
+//     if (pentagonArea !== null) {
+//         displayPentagonPerimeterApothemArea.removeAttribute('hidden');
+//     }
+//     else {
+//         displayPentagonPerimeterApothemArea.setAttribute('hidden', true);
+//     }
+// }
 
 // Calculate Ellipse area
 function calculateEllipseArea() {
@@ -232,6 +232,19 @@ function calculateRhombusArea(){
     const area = 0.5 * d1 * d2;
     displayResultInCard(d1, d2, area, displayContainer, dD1,dD2, dArea);
 }
+// Pentagon area
+function calculatePentagonArea(){
+const perimeter = getInputValueById('perimeter-input');
+const apothem = getInputValueById('apothem-input');
+const displayContainer = document.getElementById('pentagon-p-a-area-display-container');
+const dPerimeter = document.getElementById('pentagon-p');
+const dApothem = document.getElementById('pentagon-a');
+const dArea = document.getElementById('pentagon-area');
+
+const area = 0.5 * perimeter * apothem;
+displayResultInCard(perimeter, apothem, area, displayContainer, dPerimeter, dApothem, dArea);
+}
+
 function getInputValueById(inputFieldId) {
     const inputField = document.getElementById(inputFieldId);
     const inputValueText = inputField.value;
